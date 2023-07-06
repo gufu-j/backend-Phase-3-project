@@ -31,15 +31,13 @@ class ApplicationController < Sinatra::Base
   end
   ##posting for bakeries
 
-  post '/bakeries/:bakery_id' do
+  post '/bakeries' do
     new_bakery = Bakery.create({
       name: params[:name],
       location: params[:location],
     })
     new_bakery.to_json
   end
-
-
 
   #Breads
   get '/breads' do
