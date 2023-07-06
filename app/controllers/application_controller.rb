@@ -19,6 +19,7 @@ class ApplicationController < Sinatra::Base
     bakery.to_json(include: :breads)
   end
 
+  ##posting for bread
   post '/bakeries/:bakery_id/breads' do
     new_bread = Bread.create({
       name: params[:name],
@@ -27,6 +28,15 @@ class ApplicationController < Sinatra::Base
       type_of_bread: params[:type_of_bread]
     })
     new_bread.to_json
+  end
+  ##posting for bakeries
+
+  post '/bakeries/:bakery_id' do
+    new_bakery = Bakery.create({
+      name: params[:name],
+      location: params[:location],
+    })
+    new_bakery.to_json
   end
 
 
