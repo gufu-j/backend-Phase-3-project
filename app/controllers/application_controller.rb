@@ -39,6 +39,18 @@ class ApplicationController < Sinatra::Base
     new_bakery.to_json
   end
 
+  delete '/bakeries/:id' do
+    
+    bakery = Bakery.find(params[:id])
+    bakery.destroy
+    bakery.to_json
+    
+  end
+
+
+
+
+
   #Breads
   get '/breads' do
     breads = Bread.all
