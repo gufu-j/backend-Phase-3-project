@@ -39,6 +39,7 @@ class ApplicationController < Sinatra::Base
     new_bakery.to_json
   end
 
+  ## Delete Method for bakeries
   delete '/bakeries/:id' do
     
     bakery = Bakery.find(params[:id])
@@ -47,11 +48,12 @@ class ApplicationController < Sinatra::Base
     
   end
 
+  ##Patch Method For BakeriesS
   patch '/bakeries/:id' do
     bakery = bakery.find(params[:id])
     bakery.update(
-      name: params[:score],
-      location: params[:comment]
+      name: params[:name],
+      location: params[:location]
     )
     bakery.to_json
   end
