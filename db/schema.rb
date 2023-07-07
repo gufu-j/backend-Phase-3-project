@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2023_06_17_020846) do
   create_table "bakeries", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.integer "branch"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -30,4 +29,3 @@ ActiveRecord::Schema.define(version: 2023_06_17_020846) do
   end
 
 end
-

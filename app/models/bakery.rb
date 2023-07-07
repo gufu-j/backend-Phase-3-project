@@ -10,6 +10,7 @@ class Bakery < ActiveRecord::Base
     def update_with_attributes(attribute)
         self.update(attribute)
     end
+
 end
 
 

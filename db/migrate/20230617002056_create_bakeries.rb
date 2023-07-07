@@ -3,7 +3,6 @@ class CreateBakeries < ActiveRecord::Migration[6.1]
     create_table :bakeries do |t|
       t.string :name
       t.string :location
-      t.integer :branch
       t.timestamps
     end
   end

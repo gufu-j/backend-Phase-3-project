@@ -3,8 +3,8 @@ puts "🌱 Seeding spices..."
 Bread.destroy_all
 Bakery.destroy_all
 
-bakery1 = Bakery.create(name: "Litella Bakery", location: "Westberry", branch: 1 )
-bakery2 = Bakery.create(name: "Litella Bakery", location: "Bay Shore", branch: 2 )
+bakery1 = Bakery.create(name: "Litella Bakery", location: "Westberry" )
+bakery2 = Bakery.create(name: "Litella Bakery", location: "Bay Shore" )
 
 Bread.create(name: "Bagel", type_of_bread: "Yeast bread", price: 2, bakery_id: bakery1.id)
 Bread.create(name: "Baguette", type_of_bread: "Yeast bread", price: 3, bakery_id: bakery1.id)
