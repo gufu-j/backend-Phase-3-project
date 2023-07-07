@@ -47,6 +47,15 @@ class ApplicationController < Sinatra::Base
     
   end
 
+  patch '/bakeries/:id' do
+    bakery = bakery.find(params[:id])
+    bakery.update(
+      name: params[:score],
+      location: params[:comment]
+    )
+    bakery.to_json
+  end
+
 
 
 
