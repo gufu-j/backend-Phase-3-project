@@ -14,11 +14,6 @@ class ApplicationController < Sinatra::Base
     bakeries.to_json(include: :breads)
   end
 
-  
-  # get "/bakeries/:id" do
-  #   bakery = Bakery.find(params[:id])
-  #   bakery.to_json(include: :breads)
-  # end
 
   ##posting for bread
   post '/bakeries/:bakery_id/breads' do
