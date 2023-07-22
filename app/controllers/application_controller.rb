@@ -25,7 +25,6 @@ class ApplicationController < Sinatra::Base
   end
 
   delete '/bakeries/:id' do
-    
     bakery = Bakery.find(params[:id])
     bakery.destroy
     bakery.to_json
@@ -41,6 +40,27 @@ class ApplicationController < Sinatra::Base
     bakery.to_json(include: :breads)
   end
   
+
+  ## this below is practice
+  # get '/breads/:type_of_bread' do
+  #   breads = Bread.where(type_of_bread: params[:type_of_bread])
+  #   breads.to_json
+  # end
+
+  get '/breads/:name' do
+    breads = Bread.all.where(name: params[:name])
+    breads.to_json
+  end
+
+  # what's below is not part of the curriculum, just continuity of project
+
+  delete '/bakeries/:bakery_id/breads/:id' do
+    bread = Bread.find(params[:id])
+    bread.destroy
+    bread.to_json
+  end
+
+
 end
 
 
